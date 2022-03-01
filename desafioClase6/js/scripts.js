@@ -20,24 +20,24 @@ const resolver = () =>{
     let item = document.createElement('li');
     let x
     if(operacion === "factorial"){
-        
+        let numeroIn = numero
          x = 1
-        while (numero > 1) {
-            x = x * numero
-            numero = numero - 1
+        while (numeroIn > 1) {
+            x = x * numeroIn
+            numeroIn--
         }
         visor.innerHTML = `${x}`
 
     }
     else if (operacion === "potencia"){
-         x = numero * numero * numero
+         x = Math.pow(numero,3)
         visor.innerHTML = `${x}`
     }else{
         visor.innerHTML = `Operacion no valida`
     }
     //Almacenar en un array los resultados obtenidos
     resultados.push(new Resultados(x, operacion,numero))
-    item.textContent = `Numero ingresado:${numero} Operacion:${operacion} Resultado:${x}`
+    item.textContent = `Numero ingresado: ${numero}   Operacion: ${operacion}   Resultado: ${x}`
     historial.appendChild(item)
     console.log(resultados)
 
